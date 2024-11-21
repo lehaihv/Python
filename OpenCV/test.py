@@ -38,8 +38,18 @@ while 1:
     ###
 	# this will give the color to mask. 
 	cv2.imshow('Original',frame) # to display the original frame 
-	#cv2.imshow('Blue Detector',blue) # to display the blue object output 
-	cv2.imshow('Blue Detector',red) # to display the blue object output 
+	cv2.imshow('Blue Detector',blue) # to display the blue object output 
+	#cv2.imshow('Blue Detector',red) # to display the blue object output 
+	# Convert RGB to HSV
+    # Calculate the average HSV values
+	avg_hsv = np.mean(blue, axis=(0, 1))
+	mea_value = f"{(avg_hsv[0]+avg_hsv[1]+avg_hsv[2]):.2f}"            
+    #avg_hsv = np.mean(hsv_image, axis=(0, 1))
+	#
+	""" cv2.putText(blue, mea_value, (10, 10),  #"Red Colour"
+				cv2.FONT_HERSHEY_SIMPLEX, 1.0, 
+				(0, 0, 255)) """	
+	print(mea_value)
 	
 
 	if cv2.waitKey(1)==27: 
