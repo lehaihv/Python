@@ -1,4 +1,5 @@
 import cv2
+import PIL
 from PIL import Image
 
 from util import get_limits

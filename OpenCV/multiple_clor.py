@@ -119,16 +119,14 @@ while(1):
             # Access individual HSV values
             # Access the Hue channel
             hue_channel = hsv[:, :, 0]
-
             # Access the Saturation channel
             saturation_channel = hsv[:, :, 1]
-
             # Access the Value channel
             value_channel = hsv[:, :, 2]
-            print("Hue:", hue_channel)
+            """ print("Hue:", hue_channel)
             print("Saturation:", saturation_channel)
-            print("Value:", value_channel)
-            temp = hue_channel[0,0]/3 # + saturation_channel[0,0]        #int(value_channel[0])
+            print("Value:", value_channel) """
+            temp = hue_channel[0,0]/3 
             temp1 = saturation_channel[0,0]/3
             temp2 = value_channel[0,0]/3
             tempp = float(temp + temp1 + temp2)
@@ -136,14 +134,9 @@ while(1):
             cv2.putText(imageFrame, f"{(tempp):.3f}", (x, y), #"Blue Colour" mea_value str(x)str(hsv)
                         cv2.FONT_HERSHEY_SIMPLEX, 
                         1.0, (0, 255, 0)) 
-            print ("HSV : " ,hsv)
+            """ print ("HSV : " ,hsv)
             print("Coordinates of pixel: X: ",x,"Y: ",y)
-            """temp = hue_channel[0,0]/3 # + saturation_channel[0,0]        #int(value_channel[0])
-            temp1 = saturation_channel[0,0]/3
-            temp2 = value_channel[0,0]/3
-            tempp = float(temp + temp1 + temp2) """
-            print(f"{tempp}")
-            #print(f"{temp1}")
+            print(f"{tempp}") """
             
     # Program Termination 
     cv2.imshow("Multiple Color Detection in Real-TIme", imageFrame) 
